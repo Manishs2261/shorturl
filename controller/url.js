@@ -11,8 +11,8 @@ await URL.create({
     redirectURL:body.url,
     visiHistory:[],
 });
+return res.render("home",{id:shortIdString});
 
-return res.json({id:shortIdString});
     
 }
 
