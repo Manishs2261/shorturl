@@ -5,6 +5,7 @@ const { connectionToMongoDB } = require("./connection");
 const URL = require('./model/url');
 const path = require("path");
 const staticRoute = require("./router/staticRouter");
+const userRoute = require("./router/user");
 
 const app = express();
 const PORT = 8001;
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 app.use("/url",urlRoute);
+app.use("/user",userRoute);
 app.use("/",staticRoute);
 
 app.get("/test",async(req,res) =>{
