@@ -16,9 +16,14 @@ const urlSchema = new mongoose.Schema(
       visiHistory: [
         {
           timestamp: { type: Number } // Store the timestamp as a Number
-        }
-      ]
-    },
+        },
+      ],
+    
+    createdBy: {
+type: mongoose.Schema.Types.ObjectId,
+ref:"users",
+    }
+  },
     { timeseries: true }
   );
   

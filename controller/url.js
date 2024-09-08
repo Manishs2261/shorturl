@@ -10,6 +10,7 @@ await URL.create({
     shortId:shortIdString,
     redirectURL:body.url,
     visiHistory:[],
+    createdBy: req.user._id,
 });
 return res.render("home",{id:shortIdString});
 
